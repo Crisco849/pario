@@ -25,6 +25,12 @@ body
 	height: -90%;
 }
 
+p
+{
+	font:1em "Agency FB", serif;
+	text-decoration-color: #FFFFFF;
+}
+
 .content {
 	padding:30px;
 }
