@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<article id="wrap">
+  <article id="lightings">
+      <section id="one">
+            <section id="two">
+                <section id="three">
+                    <section id="four">
+                        <section id="five">
+
+                        </section>
+                    </section>
+                </section>
+            </section>
+    </section>
+    </article>
+</article>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8"></meta>
+    <title>Animated Login Form</title>
+
+
+
+
+    <div class="UI">
+
+    <br>
+    </div>
+  </head>
+
+  <body>
+
+    <form class="box">
+      <h1>Login</h1>
+      <input type="text" name="" placeholder="Username" id="username" onchange="inputChange()">
+      <input type="password" name="" placeholder="Password" id="password" onchange="inputChange()">
+      <input type="submit" name="" value="Login" onclick="checkLogin()">
+    </form>
+  </body>
+
+
+
+
+
+
+
+  <script>
+
+      var user = "";
+      var pass = "";
+      function inputChange(){
+        user = document.getElementById("username").value;
+        pass = document.getElementById("password").value;
+      }
+      function checkLogin(){
+          if(user == "Crisco849" && pass == "password"){
+            /*var win = window.open("https://www.google.com", '_blank');
+            win.replace(); */
+            var win = window.open("mainpage.html","_blank");
+            win.replace();
+
+          }
+          else {
+            alert("Incorrect Username or Password");
+          }
+      }
+      function loadHomePage() {
+          window.location.assign("https://www.tutorialrepublic.com");
+      }
+
+  </script>
+
+
+</html>

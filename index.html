@@ -2,28 +2,54 @@
 <link rel="stylesheet" href="design.css">
 <header>
 	<div class="overlay">
-	<h1>Welcome</h1>
+	<a value="a" onclick="window.location.href='login.html'"
+			<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				Login
+		</a>
+
+		<b value="b" onclick="window.location.href='error.html'"
+				<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					Sign Up
+				</b>
+
+	<h1>Pario</h1>
 	<h3>This Is Collin's Website</h3>
-	<p>It is still undergoing development.</p>
+	<button onclick="readMoreButton()">Read More</button>
 	<br>
-	<button>READ MORE</button>
-		</div>
+	<h3 id="demo"></h3>
+
+
+
+	<br>
+	</div>
+
 </header>
+<body>
+	<article id="wrap">
+		<article id="lightings">
+				<section id="one">
+							<section id="two">
+									<section id="three">
+											<section id="four">
+													<section id="five">
 
-
-<article id="wrap">
-	<article id="lightings">
-    	<section id="one">
-            <section id="two">
-                <section id="three">
-                    <section id="four">
-                        <section id="five">
-                            
-                        </section>
-                    </section>
-                </section>
-            </section>
-		</section>
-    </article>
-</article>
-
+													</section>
+											</section>
+									</section>
+							</section>
+			</section>
+			</article>
+	</article>
+</body>
+<script>
+	
+	function readMoreButton(){
+	document.getElementById("demo").innerHTML = "Hello Visitor, you have clicked read more!";
+	}
+</script>
