@@ -32,8 +32,14 @@ body
 }
 
 .content {
+	text-decoration-color: #FFFFFF;
 	color: #fff;
 	padding:30px;
+}
+
+.content .p {
+	text-decoration-color: #FFFFFF;
+	color: #fff;
 }
 
 .nav-main {
