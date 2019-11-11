@@ -44,6 +44,3 @@ async function accessSpreadsheet(){
 
 
 
-
-
-accessSpreadsheet();
