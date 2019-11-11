@@ -5,7 +5,7 @@ var pass = "";
     pass = document.getElementById("password").value;
  }
 
-const GoogleSpreadsheet = require('./google-spreadsheet');
+const GoogleSpreadsheet = require('node_modules/google-spreadsheet');
 const { promisify } = require('util');
 
 const creds = require('./client_secret.json');
