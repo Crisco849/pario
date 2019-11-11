@@ -46,31 +46,4 @@
 
 
 
-  <script>
-
-      var user = "";
-      var pass = "";
-      function inputChange(){
-        user = document.getElementById("username").value;
-        pass = document.getElementById("password").value;
-      }
-      function checkLogin(){
-          if(user == "Crisco849" && pass == "password"){
-            /*var win = window.open("https://www.google.com", '_blank');
-            win.replace(); */
-            var win = window.open("mainpage.html","_blank");
-            win.replace();
-
-          }
-          else {
-            alert("Incorrect Username or Password");
-          }
-      }
-      function loadHomePage() {
-          window.location.assign("https://www.tutorialrepublic.com");
-      }
-
-  </script>
-
-
 </html>
