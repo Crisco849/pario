@@ -20,41 +20,6 @@ async function accessSpreadsheet(){
     console.log('Name: ', user.username, 'Password: ', user.passwords);
     console.log('-----------------------');
   }
-  /* change field
-  const rows = await promisify(sheet.getRows)({
-    query: 'country = CA'
-
-  });
-
-  rows.forEach(row => {
-    row.country = 'USA';
-    row.save();
-  }) */
-
-  /* print info
-  const rows = await promisify(sheet.getRows)({
-    offset: 2,
-    limit: 3,
-    orderby: 'time'
-  });
-  rows.forEach(row => {
-    printUsername(row);
-  })
-  */
-
-  /* add rows
-  const row = {
-    username: 'Crisco',
-    passwords: 'pass',
-    country: 'USA'
-  }
-  await promisify(sheet.addRow)(row);
-
-  rows.forEach(row => {
-    row.country = 'USA';
-    row.save();
-  })
-  */
 
 
   const rows = await promisify(sheet.getRows)({
@@ -65,8 +30,9 @@ async function accessSpreadsheet(){
   var found = false;
   rows.forEach(row => {
     if(row.username == name && row.passwords == pass){
-      found = true;
-      alert("Confirmed");
+        found = true;
+        var win = window.open("mainpage.html","_blank");
+        win.replace();
     }
   })
   if(found == false){
