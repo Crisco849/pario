@@ -1,3 +1,10 @@
+var name = "";
+var pass = "";
+ function inputChange(){
+    user = document.getElementById("username").value;
+    pass = document.getElementById("password").value;
+ }
+
 const GoogleSpreadsheet = require('google-spreadsheet');
 const { promisify } = require('util');
 
@@ -49,8 +56,7 @@ async function accessSpreadsheet(){
   })
   */
 
-  var name = 'Crisco23';
-  var pass = 'password';
+
   const rows = await promisify(sheet.getRows)({
     offset: 2,
     limit: 3,
@@ -60,11 +66,11 @@ async function accessSpreadsheet(){
   rows.forEach(row => {
     if(row.username == name && row.passwords == pass){
       found = true;
-      console.log('Confirmed');
+      alert("Confirmed");
     }
   })
   if(found == false){
-    console.log('Denied');
+    alert("Username or Password is Incorrect.");
   }
 
 }
