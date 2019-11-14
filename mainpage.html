@@ -49,7 +49,7 @@
                 <li><a href="#">Contact Me</a></li>
                 <li><a href="#">Website Information</a></li>
                 <li><a href="#">Creator Of Website</a></li>
-                <li><a href="http://google.com/" onclick="location.replace('http://google.com/'),'_top'">Random</a></li>
+                <li><a href="http://google.com/" onclick="goGoogle()">Random</a></li>
               </ul>
             </div>
           </div>
@@ -112,6 +112,10 @@
         scrollPercent = (scroll / (dh-wh)) * 100;
         $('#progressbar').css('height', scrollPercent + '%');
       })
+
+      function goGoogle(){
+          window.replace('https://www.google.com/');
+      }
     </script>
 
   </body>
