@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-    <script src="/sheets/login.js"></script>
 <article id="wrap">
   <article id="lightings">
       <section id="one">
@@ -36,10 +35,31 @@
       <h1>Login</h1>
       <input type="text" name="" placeholder="Username" id="username" onchange="inputChange()">
       <input type="password" name="" placeholder="Password" id="password" onchange="inputChange()">
-      <input type="submit" name="" value="Login" onclick="accessSpreadsheet()">
+      <input type="submit" name="" value="Login" onclick="checkLogin()">
     </form>
   </body>
+<script>
+var name = "";
+var pass = "";
+ function inputChange(){
+    user = document.getElementById("username").value;
+    pass = document.getElementById("password").value;
+ }
+function checkLogin(){
+    var found = false;
+        if(name == "Crisco849" && pass == "password" ){
+        found = true;
+            var win = window.open("mainpage.html","_blank");
+            win.replace();
+    }
+    
+    if(found == false){
+        alert("Username or Password is Incorrect.");
+    }
+}
 
+
+</script>
 
 
 
