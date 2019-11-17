@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans">
+
+
+
+
+  </head>
+
+  <body>
+    <nav class="nav-main">
+      <div class="logo">
+        <a class="buttonLogo" href="basepage.html">Pario</a>
+      </div>
+      <ul>
+        <li>
+          <a href="#" class="nav-item">Forum</a>
+          <div class="nav-content">
+            <div class="nav-sub">
+              <ul>
+                <li><a href="#">New Posts</a></li>
+                <li><a href="#">Discussions</a></li>
+                <li><a href="#">Your Posts</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="nav-item">Projects</a>
+          <div class="nav-content">
+            <div class="nav-sub">
+              <ul>
+                <li><a href="#">Java</a></li>
+                <li><a href="#">Javascript</a></li>
+                <li><a href="#">Python</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="nav-item">About</a>
+          <div class="nav-content">
+            <div class="nav-sub">
+              <ul>
+                <li><a href="#">Contact Me</a></li>
+                <li><a href="#">Website Information</a></li>
+                <li><a href="#">Creator Of Website</a></li>
+                <li><a onclick="javascript:window.open('htmldocument/random.html', '_self')">Random</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <br>
+    <div id="progressbar"></div>
+
+    <section>
+      <div style="height:100%;width:100%">
+      <h2>About Me</h2>
+      <p> My name is Collin Varisco and I made this website. I'm using it currently to host things that I create and hopefully soon I will be able to add a working 
+          forum for discussions. <br><br>
+      <h2>Contact Information</h2>
+      <p> Email: collinvarisco@Gmail.com </p>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+      $(window).scroll(function(){
+        var scroll = $(window).scrollTop(),
+        dh = $(document).height(),
+        wh = $(window).height();
+        scrollPercent = (scroll / (dh-wh)) * 100;
+        $('#progressbar').css('height', scrollPercent + '%');
+      })
+
+      function goGoogle(){
+          window.replace('https://www.google.com/');
+      }
+    </script>
+
+  </body>
+
+
+</html>
+
