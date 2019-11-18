@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 6.0.7.3 (Linux)"/>
+	<meta name="created" content="2019-11-17T18:16:28.671637701"/>
+	<meta name="changed" content="2019-11-17T18:17:47.023375079"/>
+	<style type="text/css">
+		@page { margin: 0.79in }
+		p { margin-bottom: 0.1in; line-height: 115% }
+	</style>
+</head>
+<body lang="en-US" dir="ltr">
+<p style="margin-bottom: 0in; line-height: 100%">var values = [100,
+20, 60, 40];</p>
+<p style="margin-bottom: 0in; line-height: 100%">var weights = [3, 2,
+4, 1];</p>
+<p style="margin-bottom: 0in; line-height: 100%">var capacity = 5;</p>
+<p style="margin-bottom: 0in; line-height: 100%">itemCount = 4;</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">KnapSack(values,
+weights, capacity, itemCount);</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">function max(a, b){</p>
+<p style="margin-bottom: 0in; line-height: 100%">	return (a &gt; b) ?
+a : b;</p>
+<p style="margin-bottom: 0in; line-height: 100%">}</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">function
+KnapSack(val, wt, W, n){</p>
+<p style="margin-bottom: 0in; line-height: 100%">	var table = new
+Array(n+1);</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">	for (var i = 0; i &lt;
+table.length; i++) { 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">    	table[i] = new
+Array(W+1 ); 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">	} 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">  
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">	for(var i = 0; i &lt;
+n+1; i++){</p>
+<p style="margin-bottom: 0in; line-height: 100%">		table[i][0] = 0;</p>
+<p style="margin-bottom: 0in; line-height: 100%">	}</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">	for(var j = 0; j &lt;
+W+1; j++){</p>
+<p style="margin-bottom: 0in; line-height: 100%">		table[0][j] = 0;</p>
+<p style="margin-bottom: 0in; line-height: 100%">	}</p>
+<p style="margin-bottom: 0in; line-height: 100%">	 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">	for(var i = 1; i &lt;=
+n; i++){</p>
+<p style="margin-bottom: 0in; line-height: 100%">		for(var j = 1; j
+&lt;= W; j++){</p>
+<p style="margin-bottom: 0in; line-height: 100%">			if(wt[i-1] &lt;=
+j){</p>
+<p style="margin-bottom: 0in; line-height: 100%">				table[i][j] =
+max(table[i-1][j], val[i-1] + table[i-1][j-wt[i-1]]);</p>
+<p style="margin-bottom: 0in; line-height: 100%">			} else {</p>
+<p style="margin-bottom: 0in; line-height: 100%">				table[i][j] =
+table[i-1][j];</p>
+<p style="margin-bottom: 0in; line-height: 100%">			}</p>
+<p style="margin-bottom: 0in; line-height: 100%">		}</p>
+<p style="margin-bottom: 0in; line-height: 100%">	} 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">	// Display Elements</p>
+<p style="margin-bottom: 0in; line-height: 100%">	for (var i = 0; i
+&lt;= n; i++) { 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">	    for (var j = 0;
+j &lt;= W; j++)    { 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">	       
+document.write(table[i][j] + &quot; &quot;); 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">	    } 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">	   
+document.write(&quot;&lt;br&gt;&quot;); 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">	}  
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">	document.write(&quot;Max
+value is &quot; + table[n][W]);</p>
+<p style="margin-bottom: 0in; line-height: 100%">}</p>
+</body>
+</html>
