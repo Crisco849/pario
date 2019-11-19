@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <link rel="stylesheet" href="study.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans">
+
+
+
+
+  </head>
+
+  <body>
+    <nav class="nav-main">
+      <div class="logo">
+        <a class="buttonLogo" href="basepage.html">Pario</a>
+      </div>
+      <ul>
+        <li>
+          <a href="#" class="nav-item">Forum</a>
+          <div class="nav-content">
+            <div class="nav-sub">
+              <ul>
+                <li><a href="#">New Posts</a></li>
+                <li><a href="#">Discussions</a></li>
+                <li><a href="#">Your Posts</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="nav-item">Projects</a>
+          <div class="nav-content">
+            <div class="nav-sub">
+              <ul>
+                <li><a href="#">Java</a></li>
+                <li><a onclick="javascript:window.open('https://crisco849.github.io/pario/Projects/projects.html', '_self')">Javascript</a></li>
+                <li><a href="#">Python</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="nav-item">About</a>
+          <div class="nav-content">
+            <div class="nav-sub">
+              <ul>
+                <li><a href="#">Contact Me</a></li>
+                <li><a onclick="javascript:window.open('About/about.html', '_self')">Website Information</a></li>
+                <li><a href="#">Creator Of Website</a></li>
+                <li><a onclick="javascript:window.open('htmldocument/random.html', '_self')">Random</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <br>
+    <div id="progressbar"></div>
+
+    <section>
+      <div style="height:100%;width:100%">
+      <h2>CMPS 310 Test 2</h2>
+      
+       </div>
+      <iframe src="https://quizlet.com/341272626/flashcards/embed?i=a3x3v&x=1jj1" height="800" width="100%" style="border:0"></iframe>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+      $(window).scroll(function(){
+        var scroll = $(window).scrollTop(),
+        dh = $(document).height(),
+        wh = $(window).height();
+        scrollPercent = (scroll / (dh-wh)) * 100;
+        $('#progressbar').css('height', scrollPercent + '%');
+      })
+
+      function goGoogle(){
+          window.replace('https://www.google.com/');
+      }
+    </script>
+
+  </body>
+
+
+</html>
+

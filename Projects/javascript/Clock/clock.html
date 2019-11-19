@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="clock.css">
+	<head>
+		<h1 id="demo">00:00</h1>
+	</head>
+	<script>
+		function time(){
+			var d = new Date();
+			var n = d.getTime();
+			var h = d.getHours();
+			var m = d.getMinutes();
+			var s = d.getSeconds();
+			if(s < 10){
+				document.getElementById("demo").innerHTML = h + ":" + m + ":" + "0"+s;
+			} else {
+			document.getElementById("demo").innerHTML = h + ":" + m + ":" + s;
+			}
+		}
+		setInterval(time, 1000);
+	</script>
+
+</html>
