@@ -11,19 +11,26 @@
 			var h = d.getHours();
 			var m = d.getMinutes();
 			var s = d.getSeconds();
-			if(h>12){
-				if(s < 10){
-					document.getElementById("demo").innerHTML = (h-12)+ ":" + m + ":" + "0"+s + " PM";
-				} else {
-					document.getElementById("demo").innerHTML = (h-12) + ":" + m + ":" + s + " PM";
+			var ampm;
+			if(h >= 12){
+				if(h>12){
+					h = h-12;
 				}
+				ampm = " PM";
 			} else {
-				if(s < 10){
-						document.getElementById("demo").innerHTML = h + ":" + m + ":" + "0"+s + " AM";
-				} else {
-						document.getElementById("demo").innerHTML = h + ":" + m + ":" + s + " AM";
-				}
+				ampm = " AM";
 			}
+			if(s < 10){
+				s = "0" + s;
+			} 
+			if(h < 10){
+				h = "0" + h;
+			}
+			if(m < 10){
+				m = "0" + m;
+			}
+			
+			document.getElementById("demo").innerHTML =  h + ":" + m + ":" +s + ampm;
 		}
 		setInterval(time, 1000);
 	</script>
