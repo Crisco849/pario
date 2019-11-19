@@ -11,10 +11,18 @@
 			var h = d.getHours();
 			var m = d.getMinutes();
 			var s = d.getSeconds();
-			if(s < 10){
-				document.getElementById("demo").innerHTML = h + ":" + m + ":" + "0"+s;
+			if(h>12){
+				if(s < 10){
+					document.getElementById("demo").innerHTML = (h-12)+ ":" + m + ":" + "0"+s;
+				} else {
+					document.getElementById("demo").innerHTML = (h-12) + ":" + m + ":" + s;
+				}
 			} else {
-			document.getElementById("demo").innerHTML = h + ":" + m + ":" + s;
+				if(s < 10){
+						document.getElementById("demo").innerHTML = h + ":" + m + ":" + "0"+s;
+				} else {
+						document.getElementById("demo").innerHTML = h + ":" + m + ":" + s;
+				}
 			}
 		}
 		setInterval(time, 1000);
