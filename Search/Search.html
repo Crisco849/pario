@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="files">
+        <h1>Pario</h1>
+        <a href="#1">Home</a>
+        <a href="#2">About</a>
+        <form>
+            <input type="text" placeholder="Search.." id ="search"/>
+        </form>
+    </div>
+    <div class="results">
+        <br></br>
+        <a href="a3-Fall2019.pdf" id="0"></a><br></br>
+        <a href="A3Fall2019Solution.pdf" id="1"></a><br></br>
+        <a href="Backtracking-1_Presentation.pdf" id="2"></a><br></br>
+        <a href="Backtracking-2_Presentation.pdf" id="3"></a><br></br>
+        <a href="BranchAndBound-1_Presentation.pdf" id="4"></a><br></br>
+        <a href="BranchAndBound-2_Presentation.pdf" id="5"></a><br></br>
+        <a href="Intractability_Presentation.pdf" id="6"></a><br></br>
+        <a href="#" id="7"></a><br></br>
+        <a href="#" id="8"></a><br></br>
+        <a href="#" id="9"></a><br></br>
+        <a href="#" id="10"></a><br></br>
+        <a href="#" id="11"></a><br></br>
+        <a href="#" id="12"></a><br></br>
+        <a href="#" id="13"></a><br></br>
+        <a href="#" id="14"></a><br></br>
+        <a href="#" id="15"></a><br></br>
+        <a href="#" id="16"></a><br></br>
+        <a href="#" id="17"></a><br></br>
+        <a href="#" id="18"></a><br></br>
+        <a href="#" id="19"></a><br></br>
+        <a href="#" id="20"></a><br></br>
+        <a href="#" id="21"></a><br></br>
+        <a href="#" id="22"></a><br></br>
+        <a href="#" id="23"></a><br></br>
+        <a href="#" id="24"></a><br></br>
+        <a href="#" id="25"></a><br></br>
+        <a href="#" id="26"></a><br></br>
+        <a href="#" id="27"></a><br></br>
+        <a href="#" id="28"></a><br></br>
+        <a href="#" id="29"></a><br></br>
+        <a href="#" id="30"></a><br></br>
+        <a href="#" id="31"></a><br></br>
+        <a href="#" id="32"></a><br></br>
+        <a href="#" id="33"></a><br></br>
+        <a href="#" id="34"></a><br></br>
+        <a href="#" id="35"></a><br></br>
+        <a href="#" id="36"></a><br></br>
+
+
+    </div>
+    </div>
+
+</body>
+<script>
+    var stored = ["Assignment 3 CMPS 340", "Assignment 3 Solution CMPS 340", "Backtracking 1 CMPS 340", "Backtracking 2 CMPS 340", "Branch And Bound 1 CMPS 340", "Branch And Bound 2", "Intractability CMPS 340"];
+    var rankedStored = [];
+   	var count = 0;
+   	function rank(word) {
+        for (var j = 0; j < stored.length; j++) {
+            for (var i = 0; i < stored[j].length; i++) {
+                if (word.charAt(i).toLowerCase() === stored[j].charAt(i).toLowerCase()) {
+                    count++;
+                }
+            }
+            rankedStored[j] = count;
+            count= 0;
+        }
+        count = 0;
+    }
+
+
+
+    for(var i = 0; i < stored.length - 1; i++){
+        for(var j = 0; j < stored.length - i - 1; j++){
+            if(rankedStored[j] < rankedStored[j+1]){
+                var temp = rankedStored[j];
+                rankedStored[j] = rankedStored[j+1];
+                rankedStored[j+1] = temp;
+                var storedTemp = stored[j];
+                stored[j] = stored[j+1];
+                stored[j+1] = storedTemp;
+            }
+        }
+    }
+
+    console.log(rankedStored);
+    console.log(stored);
+
+
+    var tempStorage = [];
+
+    var temp = "";
+    var tempNumber = 0;
+    var retrieve = [];
+    var entered = document.getElementById('search');
+    var count = 0;
+    var reorganize = [];
+    entered.addEventListener('keypress', function(event) {
+        for(var i = 0; i < stored.length; i++){
+            tempNumber = 0;
+            count = 0;
+            temp = "";
+            document.getElementById(i).innerHTML = "";
+        }
+        if (event.keyCode === 13) {
+
+            event.preventDefault();
+            temp = entered.value;
+            rank(temp);
+            var count = 0;
+            for(var i = 0; i < stored.length; i++){
+                if(rankedStored[i] > 0){
+                    document.getElementById(count).innerHTML = stored[i];
+                    count++;
+                }
+            }
+            count = 0;
+
+        }
+    })
+
+
+
+</script>
+
+
+</html>
