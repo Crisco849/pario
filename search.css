@@ -1,0 +1,21 @@
+html{
+	height: 100%;
+	background-color: red;
+}
+
+header{
+	color: white;
+	background-color: green;
+	text-align: center;
+}
+
+body{
+	color:white;
+	text-align: center;
+
+}
+
+
+body a{
+	font-size: 24px;
+}
